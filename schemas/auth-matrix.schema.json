@@ -1,0 +1,64 @@
+{
+  "$defs": {
+    "AuthCase": {
+      "additionalProperties": false,
+      "properties": {
+        "subject": {
+          "title": "Subject",
+          "type": "string"
+        },
+        "action": {
+          "title": "Action",
+          "type": "string"
+        },
+        "resource": {
+          "title": "Resource",
+          "type": "string"
+        },
+        "tenant": {
+          "title": "Tenant",
+          "type": "string"
+        },
+        "context": {
+          "title": "Context",
+          "type": "string"
+        },
+        "expected": {
+          "enum": [
+            "allow",
+            "deny"
+          ],
+          "title": "Expected",
+          "type": "string"
+        }
+      },
+      "required": [
+        "subject",
+        "action",
+        "resource",
+        "tenant",
+        "context",
+        "expected"
+      ],
+      "title": "AuthCase",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "cases": {
+      "items": {
+        "$ref": "#/$defs/AuthCase"
+      },
+      "maxItems": 1000,
+      "minItems": 1,
+      "title": "Cases",
+      "type": "array"
+    }
+  },
+  "required": [
+    "cases"
+  ],
+  "title": "AuthMatrix",
+  "type": "object"
+}

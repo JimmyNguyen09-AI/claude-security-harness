@@ -1,0 +1,25 @@
+rules:
+  - id: python-shell-command
+    languages: [python]
+    severity: WARNING
+    message: Review shell invocation for attacker-controlled inputs.
+    patterns:
+      - pattern-either:
+          - pattern: subprocess.run(..., shell=True, ...)
+          - pattern: subprocess.Popen(..., shell=True, ...)
+          - pattern: os.system(...)
+  - id: python-disabled-tls-verification
+    languages: [python]
+    severity: WARNING
+    message: TLS certificate verification is disabled.
+    pattern: requests.$METHOD(..., verify=False, ...)
+  - id: javascript-eval
+    languages: [javascript, typescript]
+    severity: WARNING
+    message: Trace untrusted input reaching dynamic code execution.
+    pattern: eval(...)
+  - id: python-yaml-unsafe-load
+    languages: [python]
+    severity: WARNING
+    message: Confirm an explicitly safe loader is used for untrusted YAML.
+    pattern: yaml.load($DATA)

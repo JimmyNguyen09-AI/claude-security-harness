@@ -1,0 +1,170 @@
+{
+  "$defs": {
+    "Evidence": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "maxLength": 500,
+          "minLength": 1,
+          "title": "Path",
+          "type": "string"
+        },
+        "line": {
+          "minimum": 1,
+          "title": "Line",
+          "type": "integer"
+        },
+        "quote": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "line",
+        "quote"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    },
+    "Finding": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[A-Za-z0-9_-]{1,80}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "title": {
+          "maxLength": 300,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "category": {
+          "enum": [
+            "authentication",
+            "authorization",
+            "injection",
+            "secrets",
+            "dependencies",
+            "reliability",
+            "configuration"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "suspected",
+            "supported",
+            "rejected",
+            "inconclusive"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "preconditions": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 20,
+          "minItems": 1,
+          "title": "Preconditions",
+          "type": "array"
+        },
+        "impact": {
+          "maxLength": 3000,
+          "minLength": 1,
+          "title": "Impact",
+          "type": "string"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "maxItems": 20,
+          "minItems": 1,
+          "title": "Evidence",
+          "type": "array"
+        },
+        "counterevidence": {
+          "maxLength": 3000,
+          "minLength": 1,
+          "title": "Counterevidence",
+          "type": "string"
+        },
+        "remediation": {
+          "maxLength": 3000,
+          "minLength": 1,
+          "title": "Remediation",
+          "type": "string"
+        },
+        "regression_test": {
+          "maxLength": 3000,
+          "minLength": 1,
+          "title": "Regression Test",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "category",
+        "severity",
+        "status",
+        "preconditions",
+        "impact",
+        "evidence",
+        "counterevidence",
+        "remediation",
+        "regression_test"
+      ],
+      "title": "Finding",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "summary": {
+      "maxLength": 5000,
+      "title": "Summary",
+      "type": "string"
+    },
+    "findings": {
+      "items": {
+        "$ref": "#/$defs/Finding"
+      },
+      "maxItems": 100,
+      "title": "Findings",
+      "type": "array"
+    },
+    "coverage_gaps": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 100,
+      "title": "Coverage Gaps",
+      "type": "array"
+    }
+  },
+  "required": [
+    "summary",
+    "findings",
+    "coverage_gaps"
+  ],
+  "title": "Review",
+  "type": "object"
+}

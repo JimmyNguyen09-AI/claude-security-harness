@@ -1,0 +1,108 @@
+{
+  "$defs": {
+    "ScannerConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "enum": [
+            "semgrep",
+            "gitleaks",
+            "osv"
+          ],
+          "title": "Name",
+          "type": "string"
+        },
+        "image": {
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._/:\\-]*@sha256:[a-f0-9]{64}$",
+          "title": "Image",
+          "type": "string"
+        },
+        "database_date": {
+          "anyOf": [
+            {
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Database Date"
+        }
+      },
+      "required": [
+        "name",
+        "image"
+      ],
+      "title": "ScannerConfig",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "max_file_bytes": {
+      "default": 100000,
+      "maximum": 1000000,
+      "minimum": 100,
+      "title": "Max File Bytes",
+      "type": "integer"
+    },
+    "max_snapshot_bytes": {
+      "default": 20000000,
+      "maximum": 100000000,
+      "minimum": 1000,
+      "title": "Max Snapshot Bytes",
+      "type": "integer"
+    },
+    "max_context_chars": {
+      "default": 160000,
+      "maximum": 500000,
+      "minimum": 1000,
+      "title": "Max Context Chars",
+      "type": "integer"
+    },
+    "max_files": {
+      "default": 5000,
+      "maximum": 20000,
+      "minimum": 1,
+      "title": "Max Files",
+      "type": "integer"
+    },
+    "timeout_seconds": {
+      "default": 180,
+      "maximum": 900,
+      "minimum": 1,
+      "title": "Timeout Seconds",
+      "type": "integer"
+    },
+    "max_output_bytes": {
+      "default": 2000000,
+      "maximum": 10000000,
+      "minimum": 1000,
+      "title": "Max Output Bytes",
+      "type": "integer"
+    },
+    "required_scanners": {
+      "items": {
+        "enum": [
+          "semgrep",
+          "gitleaks",
+          "osv"
+        ],
+        "type": "string"
+      },
+      "title": "Required Scanners",
+      "type": "array"
+    },
+    "scanners": {
+      "items": {
+        "$ref": "#/$defs/ScannerConfig"
+      },
+      "title": "Scanners",
+      "type": "array"
+    }
+  },
+  "title": "Policy",
+  "type": "object"
+}

@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "claude-security-harness"
+version = "0.3.0"
+description = "Optional local evidence checks for the native Claude Code security harness"
+requires-python = ">=3.11"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+authors = [{name = "JimmyNguyen09-AI"}]
+dependencies = ["pydantic==2.14.3"]
+
+[project.urls]
+Repository = "https://github.com/JimmyNguyen09-AI/claude-security-harness"
+Issues = "https://github.com/JimmyNguyen09-AI/claude-security-harness/issues"
+
+[project.optional-dependencies]
+dev = ["pytest==9.2.0", "build==1.6.1", "PyYAML==6.0.3"]
+
+[project.scripts]
+csh = "security_harness.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+security_harness = ["skills/*/SKILL.md", "rules/*.yml", "rules/*.toml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

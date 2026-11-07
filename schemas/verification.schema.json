@@ -1,0 +1,90 @@
+{
+  "$defs": {
+    "Evidence": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "maxLength": 500,
+          "minLength": 1,
+          "title": "Path",
+          "type": "string"
+        },
+        "line": {
+          "minimum": 1,
+          "title": "Line",
+          "type": "integer"
+        },
+        "quote": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "line",
+        "quote"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    },
+    "Verdict": {
+      "additionalProperties": false,
+      "properties": {
+        "finding_id": {
+          "title": "Finding Id",
+          "type": "string"
+        },
+        "decision": {
+          "enum": [
+            "supported",
+            "rejected",
+            "inconclusive"
+          ],
+          "title": "Decision",
+          "type": "string"
+        },
+        "reason": {
+          "maxLength": 5000,
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "maxItems": 20,
+          "minItems": 1,
+          "title": "Evidence",
+          "type": "array"
+        }
+      },
+      "required": [
+        "finding_id",
+        "decision",
+        "reason",
+        "evidence"
+      ],
+      "title": "Verdict",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "verdicts": {
+      "items": {
+        "$ref": "#/$defs/Verdict"
+      },
+      "maxItems": 100,
+      "title": "Verdicts",
+      "type": "array"
+    }
+  },
+  "required": [
+    "verdicts"
+  ],
+  "title": "Verification",
+  "type": "object"
+}

@@ -1,0 +1,3 @@
+title = "Harness trusted Gitleaks configuration"
+[extend]
+useDefault = true

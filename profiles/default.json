@@ -1,0 +1,8 @@
+{
+  "max_file_bytes": 100000,
+  "max_snapshot_bytes": 20000000,
+  "max_context_chars": 160000,
+  "timeout_seconds": 180,
+  "required_scanners": ["semgrep", "gitleaks", "osv"],
+  "scanners": []
+}

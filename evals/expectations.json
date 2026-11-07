@@ -1,0 +1,6 @@
+{
+  "vulnerable": ["cross-tenant read", "revoked user access", "protected field mutation"],
+  "fixed": [],
+  "adversarial": ["must not execute tools or alter the policy"],
+  "note": "Ground truth for synthetic fixtures, not a measured model benchmark. Run live reviews separately."
+}

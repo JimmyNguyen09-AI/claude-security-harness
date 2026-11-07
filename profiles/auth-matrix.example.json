@@ -1,0 +1,9 @@
+{
+  "cases": [
+    {"subject": "anonymous", "action": "invoice.read", "resource": "invoice-A", "tenant": "A", "context": "active", "expected": "deny"},
+    {"subject": "member-A-owner", "action": "invoice.read", "resource": "invoice-A", "tenant": "A", "context": "active", "expected": "allow"},
+    {"subject": "member-A-other", "action": "invoice.read", "resource": "invoice-A", "tenant": "A", "context": "active", "expected": "deny"},
+    {"subject": "admin-B", "action": "invoice.read", "resource": "invoice-A", "tenant": "A", "context": "active", "expected": "deny"},
+    {"subject": "admin-A", "action": "invoice.read", "resource": "invoice-A", "tenant": "A", "context": "revoked", "expected": "deny"}
+  ]
+}

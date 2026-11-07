@@ -1,0 +1,12 @@
+include requirements.lock.txt
+include LICENSE THIRD_PARTY_NOTICES.md SECURITY.md CONTRIBUTING.md CHANGELOG.md README.vi.md
+include .claude-plugin/plugin.json
+recursive-include skills *.md *.py
+recursive-include agents *.md
+recursive-include docs *.md
+recursive-include profiles *.json
+recursive-include schemas *.json
+recursive-include scripts *.py
+recursive-include evals *.py *.md *.json
+recursive-include tests *.py
+global-exclude __pycache__ *.pyc

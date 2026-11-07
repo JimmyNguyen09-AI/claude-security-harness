@@ -1,0 +1,38 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "pattern": "^[A-Za-z0-9_-]{1,80}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "image": {
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._/:\\-]*@sha256:[a-f0-9]{64}$",
+      "title": "Image",
+      "type": "string"
+    },
+    "argv": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 50,
+      "minItems": 1,
+      "title": "Argv",
+      "type": "array"
+    },
+    "expected_exit": {
+      "default": 0,
+      "maximum": 124,
+      "minimum": 0,
+      "title": "Expected Exit",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "id",
+    "image",
+    "argv"
+  ],
+  "title": "TestSpec",
+  "type": "object"
+}
