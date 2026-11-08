@@ -14,7 +14,10 @@ files += sorted((root / "skills").rglob("*.py"))
 files += sorted((root / "agents").glob("*.md"))
 files += sorted((root / "schemas").glob("*.json"))
 files += sorted((root / "docs").glob("*.md"))
-files += [root / "evals/campaign-scenarios.json"]
+files += [root / "evals" / name for name in ("README.md", "campaign-scenarios.json",
+          "result-template.json", "expectations.json")]
+for directory in ("vulnerable", "fixed", "cases"):
+    files += sorted((root / "evals" / directory).glob("*.py"))
 with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as archive:
     for file in files:
         archive.write(file, file.relative_to(root).as_posix())

@@ -9,6 +9,10 @@ invoke an SDK, install scanners or require Docker merely to read and review code
 
 Scope requested by user: $ARGUMENTS
 
+For an unfamiliar stack, select a relevant starting trace from
+[project playbooks](../start/references/project-playbooks.md). Keep the user's
+requested scope; do not run onboarding again when it is already established.
+
 For an explicitly broad audit spanning services or multiple sessions, use the
 [campaign workflow](../campaign/SKILL.md) to track work packages and coverage. Keep
 a focused PR review focused while tracing its cross-service impact. Use the

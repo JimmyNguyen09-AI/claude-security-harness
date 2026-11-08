@@ -1,5 +1,10 @@
 # Review artifact contract
 
+Use the [full report template](report-template.md) for shareable reports; a short
+chat review can omit empty sections. Separate severity (impact/preconditions),
+confidence (evidence strength) and coverage (what was actually examined). Do not
+assign a numerical security score from a checklist or count of findings.
+
 Always identify scope/version, review mode (static/runtime), verification mode
 (same-session/separate-session), coverage and unexecuted checks. Default output is
 chat; write files only to the user's requested location or an already established

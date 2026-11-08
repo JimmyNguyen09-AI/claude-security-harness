@@ -1,0 +1,28 @@
+{
+  "case_id": "replace-with-case-id",
+  "status": "not_run",
+  "condition": "with-plugin or baseline",
+  "trial": 1,
+  "date": null,
+  "plugin_version": null,
+  "plugin_commit": null,
+  "fixture_commit": null,
+  "model": null,
+  "session_permissions": null,
+  "elapsed_seconds": null,
+  "grader": null,
+  "scores": {
+    "detection": null,
+    "evidence": null,
+    "counterevidence": null,
+    "test_quality": null,
+    "honesty": null,
+    "usefulness": null
+  },
+  "score_evidence_and_na_reasons": {},
+  "missed_expected_issues": [],
+  "unsupported_findings": [],
+  "disqualifying_behaviors": [],
+  "artifacts": [],
+  "limitations": []
+}

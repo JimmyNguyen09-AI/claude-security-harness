@@ -1,6 +1,6 @@
 {
   "name": "security-harness",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Scalable security audit campaigns, threat modeling, specialist roles and adversarial testing in your Claude Code session.",
   "author": {"name": "JimmyNguyen09-AI", "url": "https://github.com/JimmyNguyen09-AI"},
   "license": "MIT",

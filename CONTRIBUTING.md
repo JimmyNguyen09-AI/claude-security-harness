@@ -38,6 +38,12 @@ carrying stale generated files into a wheel.
 
 ## Pull requests
 
+For changes to skill behavior, use [the evaluation protocol](evals/README.md).
+Include at least a vulnerable case and a safe control appropriate to the change;
+report whether a real Claude trial was run. New stack playbooks need a concrete
+entry-point trace, counterevidence and legitimate/denied behavior, not just a list
+of vulnerability names. Preserve no-dependency native use and localized onboarding.
+
 - Explain the concrete problem, resulting behavior and evidence for the change.
 - Keep scope focused. Preserve explicit user authorization and existing edits.
 - Test security invariants and failure cases, not only implementation details.

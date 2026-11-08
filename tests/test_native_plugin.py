@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def test_native_plugin_has_discoverable_commands():
     manifest = json.loads((ROOT / ".claude-plugin/plugin.json").read_text())
     assert manifest["name"] == "security-harness"
-    for name in ("review", "authz", "verify", "fix", "campaign", "test", "threat-model", "agent-security", "resume"):
+    for name in ("start", "doctor", "review", "authz", "verify", "fix", "campaign", "test", "threat-model", "agent-security", "resume"):
         path = ROOT / "skills" / name / "SKILL.md"
         text = path.read_text(encoding="utf-8")
         header = yaml.safe_load(text.split("---", 2)[1])

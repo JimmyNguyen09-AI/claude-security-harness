@@ -1,5 +1,11 @@
 # Sources
 
+- [OWASP ASVS](https://owasp.org/projects/asvs?tab=main): verification requirements
+  and a basis for choosing concrete application control tests. ASVS 5.0.0 is a
+  reference, not a compliance claim or a checklist this plugin certifies.
+- [Create a marketplace](https://code.claude.com/docs/en/plugin-marketplaces):
+  catalogue structure, validation and installation.
+
 The primary integration is now native Claude Code skills, following the user's
 clarification. The earlier SDK-based architecture was removed from executable code.
 
@@ -15,8 +21,6 @@ clarification. The earlier SDK-based architecture was removed from executable co
   adapting upstream CC-BY-SA-4.0 content.
 - [Anthropic security review](https://github.com/anthropics/claude-code-security-review):
   workflow reference; its prompt-injection limitations remain relevant.
-- [OWASP ASVS](https://asvs.owasp.org/): framework for verification requirements;
-  this harness makes no ASVS compliance claim.
 - [Semgrep](https://github.com/semgrep/semgrep),
   [Gitleaks](https://github.com/gitleaks/gitleaks),
   [OSV](https://github.com/google/osv-scanner): optional scanner integrations.

@@ -1,6 +1,7 @@
 include requirements.lock.txt
 include LICENSE THIRD_PARTY_NOTICES.md SECURITY.md CONTRIBUTING.md CHANGELOG.md README.vi.md
 include .claude-plugin/plugin.json
+include .claude-plugin/marketplace.json
 recursive-include skills *.md *.py
 recursive-include agents *.md
 recursive-include docs *.md

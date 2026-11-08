@@ -10,6 +10,13 @@ Read [the test catalogue](references/security-catalogue.md) and
 [agent attack surfaces](../agent-security/references/agent-threats.md).
 Select relevant layers from [stack profiles](references/stack-profiles.md).
 
+For each test boundary maintain a compact case table: identity/tenant, setup,
+action, expected response, expected durable/external effects, positive control,
+execution status and artifact. Reuse the project's test runner and fixtures. If
+none exists, write minimal isolated tests without adding a framework by default.
+Test alternate methods, bulk/list/export and worker entry points when they share
+the faulty policy. A denied main route does not cover an alternate path.
+
 Derive tests from intended invariants and the threat model, not only implementation.
 Create a plan mapping surface/domain/threat -> case -> oracle -> artifact. For each
 applicable boundary include denial and legitimate allow controls. Include malformed,

@@ -12,6 +12,19 @@ Không cần Python hoặc Docker để dùng các lệnh review/fix.
 
 ## Dùng ngay
 
+Sau khi cài, mở dự án cần review và nhập vào **ô chat Claude Code**:
+
+```text
+/security-harness:start review dự án này, ưu tiên phân quyền và rò rỉ dữ liệu
+```
+
+Harness sẽ chọn workflow, nêu phạm vi rồi bắt đầu phân tích. Xem
+[hướng dẫn dùng lần đầu](docs/getting-started.vi.md). Nếu lệnh không xuất hiện,
+dùng `/security-harness:doctor` hoặc xem [troubleshooting](docs/troubleshooting.md).
+Bản 0.4 có 11 skills và 5 vai trò chuyên môn. Có
+[bộ bài đánh giá](evals/README.md) gồm mã lỗi, mã an toàn và tình huống đánh lạc
+hướng reviewer; kết quả unit test không được coi là kết quả benchmark Claude.
+
 ### Cài bằng giao diện
 
 Repo này đồng thời là một marketplace cộng đồng. Trong tab **Marketplaces** của
@@ -102,6 +115,8 @@ không có Python.
 
 | Lệnh | Kết quả |
 |---|---|
+| `start` | Tự chọn workflow, xác định phạm vi và bắt đầu review |
+| `doctor` | Chẩn đoán cấu trúc/cài đặt plugin mà không sửa cấu hình |
 | `review` | Bản đồ luồng quan trọng, finding có bằng chứng, counterevidence và coverage |
 | `authz` | Ma trận subject/action/resource/tenant/context; kiểm tra quyền object, field, function |
 | `verify` | Verdict cho từng finding; tìm lớp bảo vệ bị bỏ sót, phân biệt giả thuyết với tái hiện thật |

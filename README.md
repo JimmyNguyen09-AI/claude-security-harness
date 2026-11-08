@@ -3,7 +3,7 @@
 [Tiếng Việt](README.vi.md) · [MIT license](LICENSE) · [Security policy](SECURITY.md)
 
 **Security review, threat modeling and adversarial testing inside your existing
-Claude Code session.** Nine skills and five specialist roles help review code,
+Claude Code session.** Eleven skills and five specialist roles help review code,
 verify findings, test security boundaries and fix confirmed defects.
 
 No separate Anthropic API key or Agent SDK is required. Python and Docker are
@@ -14,6 +14,18 @@ behavioral benchmarks and scanner-container integration have not been completed.
 This is an independent community project, not an official Anthropic product.
 
 ## Quick start
+
+New here? After installing, open the project you want to review and type this in
+the Claude Code **chat box**:
+
+```text
+/security-harness:start review this project, prioritizing permissions and data exposure
+```
+
+The harness selects a workflow, states scope and starts analysis. Read the
+[first-review guide](docs/getting-started.md) or
+[hướng dẫn tiếng Việt](docs/getting-started.vi.md). For missing commands, use
+`/security-harness:doctor` or [troubleshooting](docs/troubleshooting.md).
 
 ### Install from the graphical interface
 
@@ -90,6 +102,8 @@ You can ask for review-and-fix in one instruction. Existing user edits are prese
 
 | Skill | Purpose |
 |---|---|
+| `start` | Discover the project, select a workflow and begin a scoped review |
+| `doctor` | Read-only installation and native package diagnosis |
 | `review` | Evidence-backed source review and explicit coverage limits |
 | `authz` | Subject/action/resource/tenant/context authorization checks |
 | `verify` | Counterevidence and one verdict per candidate |
@@ -116,6 +130,12 @@ Some detailed design documents are currently in Vietnamese; skill instructions a
 in English and can be used with requests in either language.
 
 ## Evidence and testing
+
+Try the [evaluation exercises](evals/README.md) on disposable synthetic projects:
+known vulnerabilities, safe controls, indirect enforcement and hostile comments.
+They include a human rubric, trial template and baseline comparison protocol.
+Automated tests verify fixture behavior; real Claude session results must be
+recorded separately. No measured model-performance claim is made.
 
 - Testers distinguish planned, executed, failed and blocked cases.
 - Negative cases are paired with legitimate positive controls and side-effect checks.
@@ -166,7 +186,7 @@ python scripts/package_plugin.py
 python scripts/check_release.py
 ```
 
-The native archive is written to `dist/security-harness-native-0.3.0.zip`.
+The native archive is written to `dist/security-harness-native-0.4.0.zip`.
 Extract it and point `--plugin-dir` at the directory containing `.claude-plugin/`.
 Generated archives are not committed; maintainers can attach checked builds to a
 GitHub release when publishing one.

@@ -1,4 +1,23 @@
-# Validation — native v0.3
+# Validation
+
+## Native v0.4 — 2026-11-08
+
+- Local Python suite: **137 passed, 1 skipped** on Windows. The skipped case needs
+  permission to create a symlink; it remains enabled on hosts that support it.
+- Eleven skills and five roles checked; all local instruction links resolve.
+- Claude Code's own plugin/marketplace validator passed. Non-blocking notices
+  concern the maintainer-only root CLAUDE.md and a missing directory-listing icon.
+- New tests exercise safe indirect authorization, tenant-admin boundaries,
+  protected-field atomicity, valid edits and returned-object isolation.
+- `doctor` rejects missing/malformed manifests, missing components, broken links,
+  escaping references and invalid marketplace sources. Its diagnostics do not
+  print file contents. Layout validity is not proof of model behavior.
+- The native ZIP was extracted into a separate directory and its bundled doctor
+  ran under Python isolated mode without installed third-party dependencies.
+- Six manual Claude exercise cases, eight campaign scenarios and an unexecuted
+  trial template are provided. No live Claude evaluation was run for this release.
+
+## Native v0.3 — historical checks
 
 The main deliverable is the local Claude Code plugin, not an SDK application.
 
