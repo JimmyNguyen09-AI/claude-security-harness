@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- GitHub-hosted community marketplace and graphical installation instructions
+  for Claude Desktop and VS Code.
+
 ## 0.3.0 — initial public source release
 
 - Nine native Claude Code skills, including campaign, test, threat-model,

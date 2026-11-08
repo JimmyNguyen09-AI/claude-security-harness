@@ -1,0 +1,14 @@
+{
+  "name": "claude-security-harness",
+  "description": "Community security review and testing workflows for Claude Code.",
+  "owner": {
+    "name": "JimmyNguyen09-AI"
+  },
+  "plugins": [
+    {
+      "name": "security-harness",
+      "source": "./",
+      "description": "Security review, threat modeling and adversarial testing inside Claude Code."
+    }
+  ]
+}

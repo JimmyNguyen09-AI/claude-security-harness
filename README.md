@@ -15,6 +15,34 @@ This is an independent community project, not an official Anthropic product.
 
 ## Quick start
 
+### Install from the graphical interface
+
+This repository is also a community marketplace. Add this GitHub source in your
+plugin manager's **Marketplaces** tab:
+
+```text
+JimmyNguyen09-AI/claude-security-harness
+```
+
+- **Claude Desktop, Code tab:** start a local session, click **+** beside the
+  prompt, then **Add plugins** (or **Plugins → Browse plugins**).
+- **VS Code:** type `/plugins` in the Claude Code chat box to open the graphical
+  plugin manager.
+
+After adding the marketplace, find **security-harness** under **Plugins**, click
+**Install**, and choose your installation scope. Start a new session if prompted.
+Enter `/security-harness:review` in the chat box to use it.
+
+Marketplace name: `claude-security-harness`. Plugin name: `security-harness`.
+This is a self-hosted community catalog, not a listing in Anthropic's official
+marketplace. Desktop's plugin browser requires a local or SSH session; it is not
+available in cloud or WSL sessions.
+
+See the official [Desktop instructions](https://code.claude.com/docs/en/desktop#install-plugins)
+and [VS Code instructions](https://code.claude.com/docs/en/vs-code#manage-plugins).
+
+### Load a local checkout
+
 Clone this repository into a tools directory:
 
 ```sh

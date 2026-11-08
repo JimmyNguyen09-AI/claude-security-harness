@@ -12,6 +12,34 @@ Không cần Python hoặc Docker để dùng các lệnh review/fix.
 
 ## Dùng ngay
 
+### Cài bằng giao diện
+
+Repo này đồng thời là một marketplace cộng đồng. Trong tab **Marketplaces** của
+trình quản lý plugin, thêm nguồn GitHub:
+
+```text
+JimmyNguyen09-AI/claude-security-harness
+```
+
+- **Claude Desktop, tab Code:** mở phiên Local, bấm **+** cạnh ô chat, chọn
+  **Add plugins** hoặc **Plugins → Browse plugins**.
+- **VS Code:** gõ `/plugins` ngay trong ô chat Claude Code để mở giao diện quản lý.
+
+Sau khi thêm marketplace, tìm **security-harness** trong tab **Plugins**, bấm
+**Install** và chọn phạm vi cài đặt. Mở phiên mới nếu giao diện yêu cầu. Nhập
+`/security-harness:review` trong ô chat để bắt đầu.
+
+Tên marketplace là `claude-security-harness`; tên plugin là `security-harness`.
+Đây là catalog cộng đồng do repo cung cấp, chưa phải danh sách chính thức của
+Anthropic. Trình duyệt plugin Desktop dùng cho phiên Local/SSH; không có trong
+phiên Cloud hoặc WSL.
+
+Tham khảo hướng dẫn chính thức cho
+[Desktop](https://code.claude.com/docs/en/desktop#install-plugins) và
+[VS Code](https://code.claude.com/docs/en/vs-code#manage-plugins).
+
+### Nạp từ thư mục local
+
 Từ thư mục dự án muốn review, mở Claude Code và nạp plugin local:
 
 ```powershell
@@ -62,8 +90,8 @@ gọi `fix`, Claude được hướng dẫn tiếp tục sửa và kiểm tra tr
 Mặc định báo cáo trong chat; thêm đường dẫn output nếu muốn lưu file. Review có
 thể đọc cả thay đổi chưa commit, staged/unstaged và untracked trong phạm vi đã chọn.
 
-Nếu dùng Claude Code trong IDE và không truyền được `--plugin-dir`, có thể mở
-terminal ở repo rồi dùng lệnh trên. Bản ZIP local nằm trong `dist/`; giải nén và
+Nếu dùng Claude Code trong IDE, có thể cài bằng giao diện theo hướng dẫn ở trên.
+Bản ZIP local nằm trong `dist/`; giải nén và
 trỏ `--plugin-dir` vào thư mục chứa `.claude-plugin/plugin.json` để dùng ở máy khác.
 Plugin không được tự cài vào cấu hình global hoặc ghi đè CLAUDE.md của dự án.
 ZIP chứa plugin native và script stdlib tùy chọn để kiểm tra campaign. Bộ Python
